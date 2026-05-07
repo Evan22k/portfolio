@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Portfolio de Caudan Evan, développeur en BTS SIO. Découvrez mes projets, mon profil et mon CV.">
+  <title>Portfolio CAUDAN Evan</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --couleur-fond: #f8f9fa;
+      --couleur-texte: #333333;
+      --couleur-primaire: #3b82f6;
+      --couleur-accent: #28a745;
+      --transition-fluide: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --ombre-douce: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --ombre-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--couleur-texte);
+      background-color: var(--couleur-fond);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .navbar-brand {
+      padding-left: 10px;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: #334155 !important;
+    }
+
+    .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-right: 40px;
+      border-bottom: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-nav {
+      padding-left: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      border-radius: 8px;
+      transition: var(--transition-fluide);
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link.active {
+      background-color: #343a40 !important;
+      color: white !important;
+      border-radius: 8px;
+      box-shadow: var(--ombre-douce);
+    }
+
+    #accueil {
+      position: relative;
+      background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://cdn.futura-sciences.com/sources/images/2-developpeur_informatique1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content {
+      animation: fadeInDown 1s ease-out;
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title span {
+      color: var(--couleur-primaire);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .hero-btn {
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none !important;
+      transition: var(--transition-fluide);
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .hero-btn-primary {
+      background-color: var(--couleur-primaire);
+      color: white;
+      border: 2px solid var(--couleur-primaire);
+    }
+
+    .hero-btn-primary:hover {
+      background-color: transparent;
+      color: var(--couleur-primaire);
+      transform: translateY(-3px);
+    }
+
+    .hero-btn-outline {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-btn-outline:hover {
+      background-color: white;
+      color: #0f172a;
+      transform: translateY(-3px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      color: white;
+      animation: bounce 2s infinite;
+    }
+
+    .profil-img-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profil-img-container img {
+      border-radius: 16px;
+      box-shadow: 15px 15px 0px rgba(40, 167, 69, 0.2);
+      transition: var(--transition-fluide);
+      object-fit: cover;
+    }
+
+    .profil-img-container:hover img {
+      transform: translate(-5px, -5px);
+      box-shadow: 20px 20px 0px rgba(40, 167, 69, 0.4);
+    }
+
+    .badges-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .badge-perso {
+      background-color: #e2e8f0;
+      color: #334155;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .fullscreen-section {
+      min-height: 100vh;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      scroll-margin-top: 80px;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+
+    /* Conteneur agrandi pour avoir des grandes cartes */
+    .section-title {
+      text-align: center;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    .separator {
+      width: 100px;
+      height: 5px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 auto 60px auto;
+    }
+
+    .competence-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      transition: var(--transition-fluide);
+      box-shadow: var(--ombre-douce);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .competence-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--ombre-hover);
+    }
+
+    .competence-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      transition: 0.3s;
+    }
+
+    .competence-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .competence-card p {
+      margin: 0;
+      font-weight: 600;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .certif-logo {
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .sous-titre-projets {
+      font-weight: 700;
+      color: #334155;
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* Grille de 2 colonnes pour faire de grandes cartes */
+    .grille-projets {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .grille-stages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .grille-stages .carte-projet {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    @media (max-width: 768px) {
+      .grille-projets {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .carte-projet {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--ombre-douce);
+      transition: var(--transition-fluide);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e2e8f0;
+    }
+
+    .carte-projet:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--ombre-hover);
+      border-color: #cbd5e1;
+    }
+
+    /* Bloc image avec fond gris par défaut si pas d'image chargée */
+    .carte-image {
+      height: 220px;
+      background-color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .carte-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carte-contenu {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .carte-contenu h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.8rem;
+    }
+
+    .carte-contenu p {
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .carte-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .btn-projet {
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      transition: var(--transition-fluide);
+      flex: 1 1 auto;
+      text-decoration: none !important;
+    }
+
+    .btn-full {
+      flex-basis: 100%;
+      margin-top: 5px;
+    }
+
+    .btn-dl-user {
+      background-color: #3b82f6;
+      color: white;
+      border: 1px solid #3b82f6;
+    }
+
+    .btn-dl-user:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn-dl-tech {
+      background-color: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-dl-tech:hover {
+      background-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .btn-dl-zip {
+      background-color: transparent;
+      color: #10b981;
+      border: 1px solid #10b981;
+    }
+
+    .btn-dl-zip:hover {
+      background-color: #10b981;
+      color: white;
+    }
+
+    .cv-action-card {
+      background-color: #f8f9fa;
+      border: 2px solid #6f42c1;
+      border-radius: 12px;
+      padding: 4rem 2rem;
+      text-align: center;
+      transition: var(--transition-fluide);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #334155;
+      text-decoration: none !important;
+    }
+
+    .cv-action-card i {
+      font-size: 4rem;
+      color: #6f42c1;
+      margin-bottom: 1rem;
+      transition: var(--transition-fluide);
+    }
+
+    .cv-action-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-action-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .cv-action-card:hover {
+      background-color: #6f42c1;
+      border-style: solid;
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: var(--ombre-hover);
+    }
+
+    .cv-action-card:hover i,
+    .cv-action-card:hover p {
+      color: white;
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      transition: var(--transition-fluide);
+    }
+
+    .card:hover {
+      box-shadow: var(--ombre-hover) !important;
+      transform: translateY(-5px);
+    }
+
+    .custom-footer {
+      padding: 30px 0;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      background-color: white;
+    }
+
+    .custom-footer a {
+      transition: var(--transition-fluide);
+    }
+
+    .custom-footer a:hover {
+      color: #3b82f6 !important;
+      transform: translateY(-3px);
+      display: inline-block;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0) translateX(-50%);
+      }
+
+      40% {
+        transform: translateY(-20px) translateX(-50%);
+      }
+
+      60% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbarNav" data-offset="120">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    $('body').scrollspy({ target: '#navbarNav', offset: 120 });
+
+    function sendViaGmail() {
+      const objet = document.getElementById("objet").value;
+      const message = document.getElementById("message").value;
+      const lien = `https://mail.google.com/mail/?view=cm&fs=1&to=evan.caudan22@gmail.com&su=${encodeURIComponent(objet)}&body=${encodeURIComponent(message)}`;
+      window.open(lien, '_blank');
+      return false;
+    }
+  </script>
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <a class="navbar-brand" href="#">Evan Caudan</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#accueil"><i class="bi bi-house-door text-primary"></i>
+            Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#profil"><i class="bi bi-person text-success"></i> Profil</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#competences"><i class="bi bi-briefcase text-warning"></i>
+            Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications"><i class="bi bi-award text-danger"></i>
+            Certifs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projets"><i class="bi bi-folder" style="color: #e83e8c;"></i>
+            Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cv"><i class="bi bi-file-earmark-person"
+              style="color: #6f42c1;"></i> CV</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacts"><i class="bi bi-telephone text-info"></i> Contacts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="accueil">
+    <div class="hero-content">
+      <h1 class="hero-title">Bonjour, je suis <span>Evan</span></h1>
+      <p class="hero-subtitle">Étudiant en informatique — BTS SIO option SLAM</p>
+      <div>
+        <a href="#projets" class="hero-btn hero-btn-primary">Découvrir mes projets</a>
+        <a href="#contacts" class="hero-btn hero-btn-outline">Me contacter</a>
+      </div>
+    </div>
+    <a href="#profil" class="scroll-indicator"><i class="bi bi-chevron-down"></i></a>
+  </div>
+
+  <div id="profil" class="fullscreen-section">
+    <div class="container">
+      <h1 class="section-title">À propos de moi</h1>
+      <hr class="separator" style="background-color: #28a745;">
+
+      <div class="row align-items-center mt-5">
+        <div class="col-lg-4 text-center mb-5 mb-lg-0">
+          <div class="profil-img-container">
+            <img src="moi.png" alt="Photo de profil de Evan Caudan" width="220" height="260">
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <h3 class="mb-3" style="font-weight: 700;">Qui suis-je ?</h3>
+
+          <div class="badges-container">
+            <span class="badge-perso"><i class="bi bi-geo-alt-fill text-danger"></i> Landerneau / Châteaulin</span>
+            <span class="badge-perso"><i class="bi bi-laptop text-primary"></i> Dev. Web & Logiciel</span>
+            <span class="badge-perso"><i class="bi bi-car-front-fill text-purple"></i> Passionné d'Automobile</span>
+          </div>
+
+          <p style="font-size: 1.1rem; color: #475569;">
+            Étudiant de 19 ans en <strong>BTS SIO (Services Informatiques aux Organisations) option SLAM</strong> en
+            2ème année au lycée Saint-Louis, je me forme activement pour devenir développeur.
+          </p>
+          <p style="font-size: 1.1rem; color: #475569;">
+            Initialement passionné par l'automobile, j'ai d'abord suivi et obtenu un Bac Pro Mécanique. C'est en
+            intégrant mon BTS actuel que j'ai véritablement découvert l'univers de l'informatique. Cette réorientation
+            réussie m'a permis de me découvrir une réelle affinité pour le développement.
+          </p>
+          <p style="font-size: 1.1rem; color: #475569;">
+            Cette réorientation témoigne avant tout de ma <strong>capacité d'adaptation</strong> et de ma détermination.
+            Venir d'un tout autre environnement m'a poussé à développer une grande curiosité et à m'investir pleinement
+            pour maîtriser les différentes technologies et langages de programmation que je découvre aujourd'hui.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="competences" class="fullscreen-section bg-white">
+    <div class="container">
+      <h1 class="section-title">Compétences</h1>
+      <hr class="separator" style="background-color: #fd7e14;">
+
+      <div class="row">
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/visual-studio.png" alt="Visual Studio">
+            <p>Visual Studio</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/fluent/96/000000/visual-studio-code-2019.png" alt="VS Code">
+            <p>VS Code</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/c-sharp-logo.png" alt="C#">
+            <p>C#</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo.png" alt="Java">
+            <p>Java</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python">
+            <p>Python</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/html-5--v1.png" alt="HTML">
+            <p>HTML</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/javascript--v1.png" alt="JavaScript">
+            <p>JavaScript</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/officel/96/000000/php-logo.png" alt="PHP">
+            <p>PHP</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/?size=100&id=J6KcaRLsTgpZ&format=png&color=000000" alt="SQL">
+            <p>SQL</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/?size=100&id=58280&format=png&color=000000" alt="XML">
+            <p>XML</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://img.icons8.com/color/96/000000/windows-10.png" alt="Windows">
+            <p>Windows</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="competence-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse">
+            <p>Eclipse</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="certifications" class="fullscreen-section">
+    <div class="container">
+      <h1 class="section-title">Certifications</h1>
+      <hr class="separator" style="background-color: #dc3545;">
+      
+      <div class="row mt-5">
+        <!-- CERTIF 1 : MOOC RGPD (Plusieurs modules) -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100 p-4 border-0" style="border-radius: 15px;">
+            <div class="card-body text-center d-flex flex-column align-items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Logo_CNIL.svg" alt="Logo CNIL" class="certif-logo mb-3">
+              <h4 class="mt-2 font-weight-bold" style="color: #1e293b;">L'atelier RGPD de la CNIL</h4>
+              <p class="text-primary mb-3 font-weight-bold" style="font-size: 0.9rem;">Obtenue en 2026</p>
+              <p class="mb-0 text-secondary flex-grow-1" style="font-size: 0.95rem;">
+                Formation validant l'acquisition des connaissances essentielles sur le Règlement Général sur la Protection des Données.
+              </p>
+            
+              <div class="mt-4 w-100">
+                <p class="font-weight-bold text-dark mb-2" style="font-size: 0.9rem;">Attestations par module :</p>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                  <a href="certif/module_1.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 1</a>
+                  <a href="certif/module_2.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 2</a>
+                  <a href="certif/module_3.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 3</a>
+                  <a href="certif/module_4.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 4</a>
+                  <a href="certif/module_5.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 5</a>
+                  <a href="certif/module_6.pdf" target="_blank" class="btn btn-sm btn-outline-danger m-1" style="border-radius: 6px; font-weight: 600;">Mod. 6</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100 p-4 border-0" style="border-radius: 15px;">
+            <div class="card-body text-center d-flex flex-column align-items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Logo_ANSSI.svg" alt="Logo ANSSI" class="certif-logo mb-3">
+              <h4 class="mt-2 font-weight-bold" style="color: #1e293b;">EBIOS Risk Manager</h4>
+              <p class="text-warning mb-3 font-weight-bold" style="font-size: 0.9rem;"><i class="bi bi-hourglass-split"></i> En cours (2026)</p>
+              <p class="mb-0 text-secondary flex-grow-1" style="font-size: 0.95rem;">
+                Apprentissage de la méthode de l'ANSSI pour l'analyse et l'évaluation des risques liés à la sécurité des systèmes d'information, visant à concevoir des stratégies de cybersécurité efficaces.
+              </p>
+              
+              <div class="mt-4 w-100">
+                <a href="https://lms.club-ebios.org/" target="_blank" class="btn btn-outline-dark px-4" style="border-radius: 8px; font-weight: 600;">
+                  <i class="bi bi-box-arrow-up-right mr-2"></i>Découvrir la certification
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="projets" class="fullscreen-section bg-white">
+    <div class="container">
+      <h1 class="section-title">Mes Projets</h1>
+      <hr class="separator" style="background-color: #e83e8c;">
+
+      <h2 class="sous-titre-projets"><i class="bi bi-building mr-2" style="color: #e83e8c;"></i> Mes Stages</h2>
+      <div class="grille-stages mb-5">
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="Logo_Box-Racing.jpg" alt="Aperçu du stage">
+          </div>
+          <div class="carte-contenu">
+            <h3>Stage 1ère année</h3>
+            <p>Développement d'un module interne. Participation aux réunions et correction de bugs.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-user btn-full">Rapport de stage</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="infini.png" alt="Aperçu du stage">
+          </div>
+          <div class="carte-contenu">
+            <h3>Stage 2ème année</h3>
+            <p>Conception et refonte de l'interface utilisateur d'une application de gestion.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-user btn-full">Rapport de stage</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <hr style="width: 50%; margin: 60px auto; border-top: 1px solid #e2e8f0;">
+
+      <h2 class="sous-titre-projets"><i class="bi bi-laptop mr-2" style="color: #e83e8c;"></i> Projets en cours &
+        Formations</h2>
+      <div class="grille-projets">
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="GalacticosIT.png" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>GalacticosIT</h3>
+            <p>Application développée pour gérer une base de données de tâches (CRUD) via une interface WinForms.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-user">Doc Utilisateur</a>
+              <a href="#" download class="btn-projet btn-dl-tech">Doc Technique</a>
+              <a href="#" download class="btn-projet btn-dl-zip btn-full">Lien du site</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="logoSALAC.png" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>SA LAC</h3>
+            <p>Application développée pour gérer une base de données de tâches (CRUD) via une interface WinForms.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-user">Doc Utilisateur</a>
+              <a href="#" download class="btn-projet btn-dl-tech">Doc Technique</a>
+              <a href="#" download class="btn-projet btn-dl-zip btn-full">Lien du site</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="gsb.png" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>GSB RH</h3>
+            <p>Création d'une application en Java exploitant rigoureusement les principes de la programmation orientée
+              objet (POO).</p>
+            <div class="carte-actions">
+              <a href="#" class="btn-projet btn-dl-user">Doc Utilisateur</a>
+              <a href="docs/documentation-technique-gsbrh-2.pdf" class="btn-projet btn-dl-tech">Doc Technique</a>
+              <a href="#" class="btn-projet btn-dl-tech">Javadoc</a>
+              <a href="#" class="btn-projet btn-dl-zip btn-full">Télécharger le projet (ZIP)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="gsb.png" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>GSB Frais</h3>
+            <p>Création d'une application en Java exploitant rigoureusement les principes de la programmation orientée
+              objet (POO).</p>
+            <div class="carte-actions">
+              <a href="#" class="btn-projet btn-dl-user">Doc Utilisateur</a>
+              <a href="docs/documentation-technique-gsbfrais-2.pdf" class="btn-projet btn-dl-tech">Doc Technique</a>
+              <a href="#" class="btn-projet btn-dl-tech">PHPDocumentor</a>
+              <a href="#" class="btn-projet btn-dl-zip btn-full">Télécharger le projet (ZIP)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="chemin_image_projet.jpg" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>Portfolio</h3>
+            <p>Conception et intégration HTML/CSS responsive pour présenter mon parcours, mes compétences et mes
+              projets.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-tech">Doc Technique</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="carte-projet">
+          <div class="carte-image">
+            <img src="totp.png" alt="Aperçu du projet">
+          </div>
+          <div class="carte-contenu">
+            <h3>TOTP</h3>
+            <p>Conception et intégration HTML/CSS responsive pour présenter mon parcours, mes compétences et mes
+              projets.</p>
+            <div class="carte-actions">
+              <a href="#" download class="btn-projet btn-dl-user">Doc Utilisateur</a>
+              <a href="#" download class="btn-projet btn-dl-tech">Doc Technique</a>
+              <a href="#" download class="btn-projet btn-dl-zip btn-full">Télécharger le projet (ZIP)</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="cv" class="fullscreen-section">
+    <div class="container">
+      <h1 class="section-title">Mon CV</h1>
+      <hr class="separator" style="background-color: #6f42c1;">
+
+      <div class="row align-items-center mt-5">
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+          <a href="CV_EvanC.pdf" target="_blank" style="text-decoration: none;">
+            <div class="cv-action-card bg-white">
+              <i class="bi bi-file-earmark-person"></i>
+              <h3>Consulter mon CV</h3>
+              <p>Cliquez pour ouvrir le document PDF dans un nouvel onglet</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6" style="padding-left: 30px;">
+          <h4 class="mb-4">Découvrez mon parcours</h4>
+          <p>Mon CV est disponible en consultation directe en ligne.</p>
+          <p>Vous y trouverez le détail de :</p>
+          <ul style="color: #475569; font-size: 1.05rem;">
+            <li class="mb-2">Mes formations actuelles et passées</li>
+            <li class="mb-2">Mes compétences techniques et transverses</li>
+            <li>Mes centres d'intérêts et diverses expériences</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contacts" class="fullscreen-section bg-white">
+    <div class="container">
+      <h1 class="section-title">Contacts</h1>
+      <hr class="separator" style="background-color: #17a2b8;">
+
+      <div class="row mt-5">
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100 bg-light">
+            <div class="card-body p-4">
+              <h5 class="card-title text-center mb-4">Me contacter par mail</h5>
+              <form id="gmailForm" onsubmit="return sendViaGmail();">
+                <div class="form-group">
+                  <label for="objet" class="font-weight-bold">Objet</label>
+                  <input type="text" class="form-control" id="objet" placeholder="Sujet de votre message" required
+                    style="border-radius: 8px;">
+                </div>
+                <div class="form-group mt-3">
+                  <label for="message" class="font-weight-bold">Message</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Votre message..." required
+                    style="border-radius: 8px;"></textarea>
+                </div>
+                <div class="d-flex justify-content-end mt-4">
+                  <button type="submit" class="btn btn-info px-4 py-2"
+                    style="border-radius: 8px; font-weight: 600;">Envoyer <i class="bi bi-send ml-1"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm h-100 bg-light">
+            <div class="card-body p-4 d-flex flex-column justify-content-center">
+              <h5 class="card-title text-center mb-5">Mes coordonnées</h5>
+              <ul class="list-unstyled text-left mx-auto" style="font-size: 1.1rem;">
+                <li class="mb-4">
+                  <i class="bi bi-envelope-fill text-primary mr-3" style="font-size: 1.3rem;"></i>
+                  <strong>Email :</strong> <a href="mailto:evan.caudan22@gmail.com"
+                    class="text-dark">evan.caudan22@gmail.com</a>
+                </li>
+                <li class="mb-4">
+                  <i class="bi bi-geo-alt-fill text-danger mr-3" style="font-size: 1.3rem;"></i>
+                  <strong>Localisation :</strong> Landerneau, France
+                </li>
+                <li class="mb-4">
+                  <i class="bi bi-linkedin text-primary mr-3" style="font-size: 1.3rem;"></i>
+                  <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/evan-caudan-6a951a35b"
+                    target="_blank" class="text-dark">Mon profil</a>
+                </li>
+                <li>
+                  <i class="bi bi-github text-dark mr-3" style="font-size: 1.3rem;"></i>
+                  <strong>GitHub :</strong> <a href="https://github.com/Evan22k" target="_blank" class="text-dark">Mon
+                    compte</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="custom-footer text-center">
+    <div class="mb-3">
+      <a href="https://www.linkedin.com/in/evan-caudan-6a951a35b" target="_blank" class="mx-3 text-secondary"
+        style="font-size: 1.8rem;">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://github.com/Evan22k" target="_blank" class="mx-3 text-secondary" style="font-size: 1.8rem;">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
+    <p class="mb-0 font-weight-bold">© 2026 CAUDAN Evan — Tous droits réservés.</p>
+  </footer>
+
+</body>
+
+</html>
