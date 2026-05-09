@@ -316,10 +316,10 @@
       position: relative;
     }
 
-    .carte-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .carte-image img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: contain;
     }
 
     .carte-contenu {
@@ -698,7 +698,7 @@
               <h4 class="mt-2 font-weight-bold" style="color: #1e293b;">L'atelier RGPD de la CNIL</h4>
               <p class="text-primary mb-3 font-weight-bold" style="font-size: 0.9rem;">Obtenue en 2026</p>
               <p class="mb-0 text-secondary flex-grow-1" style="font-size: 0.95rem;">
-                Formation validant l'acquisition des connaissances essentielles sur le Règlement Général sur la Protection des Données.
+                Validation des connaissances fondamentales sur la protection des données personnelles et les obligations légales de conformité en entreprise.
               </p>
             
               <div class="mt-4 w-100">
@@ -723,7 +723,7 @@
               <h4 class="mt-2 font-weight-bold" style="color: #1e293b;">EBIOS Risk Manager</h4>
               <p class="text-warning mb-3 font-weight-bold" style="font-size: 0.9rem;"><i class="bi bi-hourglass-split"></i> En cours (2026)</p>
               <p class="mb-0 text-secondary flex-grow-1" style="font-size: 0.95rem;">
-                Apprentissage de la méthode de l'ANSSI pour l'analyse et l'évaluation des risques liés à la sécurité des systèmes d'information, visant à concevoir des stratégies de cybersécurité efficaces.
+                Découverte de la méthode officielle de l'ANSSI pour identifier, évaluer et traiter les risques liés à la cybersécurité d'une organisation.
               </p>
               
               <div class="mt-4 w-100">
@@ -746,12 +746,12 @@
       <h2 class="sous-titre-projets"><i class="bi bi-building mr-2" style="color: #e83e8c;"></i> Mes Stages</h2>
       <div class="grille-stages mb-5">
         <article class="carte-projet">
-          <div class="carte-image">
-            <img src="photos/Logo_Box-Racing.jpg" alt="Logo Logo Box-Racing">
+          <div class="carte-image" style="background-color: #151716;">
+            <img src="photos/Logo_Box-Racing.jpg" alt="Logo Box-Racing">
           </div>
           <div class="carte-contenu">
             <h3>Stage 1ère année</h3>
-            <p>Développement d'un module interne. Participation aux réunions et correction de bugs.</p>
+            <p>Développement d'un POC local en PHP/HTML/CSS pour la refonte design du site de l'entreprise spécialisée dans la réparation et l'achat/vente de motos Box-Racing.</p>
             <div class="carte-actions">
               <a href= "https://docs.google.com/document/d/1ySbR25SeWAFnWWbwYWu2vZIxzArhqzz6VT9vWCrRbIM/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-user btn-full">Rapport de stage</a>
             </div>
@@ -764,7 +764,7 @@
           </div>
           <div class="carte-contenu">
             <h3>Stage 2ème année</h3>
-            <p>Conception et refonte de l'interface utilisateur d'une application de gestion.</p>
+            <p>Analyse de corruption de base SQLite sur stockage NFS de de l'appli Paheko, mise en place de protocoles de tests, recherche de solutions de contournement et rédaction de documentations.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/1qkd3u7ZSG3MBSKdsAuAjK1u_jrStmWUjQkdmK-kpQPc/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-user btn-full">Rapport de stage</a>
             </div>
@@ -774,47 +774,45 @@
 
       <hr style="width: 50%; margin: 60px auto; border-top: 1px solid #e2e8f0;">
 
-      <h2 class="sous-titre-projets"><i class="bi bi-laptop mr-2" style="color: #e83e8c;"></i> Projets en cours &
-        Formations</h2>
+      <h2 class="sous-titre-projets"><i class="bi bi-laptop mr-2" style="color: #e83e8c;"></i> Projets en cours de formation</h2>
       <div class="grille-projets">
 
         <article class="carte-projet">
           <div class="carte-image">
-            <img src="photos/GalacticosIT.png" alt="Aperçu du projet">
+            <img src="photos/GalacticosIT.png" alt="Logo GalacticosIT">
           </div>
           <div class="carte-contenu">
             <h3>GalacticosIT</h3>
-            <p>Application développée pour gérer une base de données de tâches (CRUD) via une interface WinForms.</p>
+            <p>Développement d'une application web PHP en équipe permettant la gestion d'un parc informatique avec un système d'authentification et de rôles sécurisés.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/19n0IVjVMyXmfhvVrLxT0069PSS8NJQdE0RGDxVonbgw/edit?tab=t.0#heading=h.aczyuw2yex2w" target="_blank" class="btn-projet btn-dl-user">Doc Utilisateur</a>
               <a href="https://docs.google.com/document/d/1ZlQDFTB3N_imTc1behC-hS5qL-Dr0dFbpGRnJg7uYAw/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-tech">Doc Technique</a>
-              <a href="https://galacticosit.rf.gd" download class="btn-projet btn-dl-zip btn-full">Lien du site</a>
+              <a href="https://galacticosit.rf.gd" target="_blank" class="btn-projet btn-dl-zip btn-full">Lien du site</a>
             </div>
           </div>
         </article>
 
         <article class="carte-projet">
           <div class="carte-image">
-            <img src="photos/logoSALAC.png" alt="Aperçu du projet">
+            <img src="photos/logoSALAC.png" alt="Logo SA LAC">
           </div>
           <div class="carte-contenu">
             <h3>SA LAC</h3>
-            <p>Application développée pour gérer une base de données de tâches (CRUD) via une interface WinForms.</p>
+            <p>Projet d'initiation au développement web : conception complète du site vitrine d'une société immobilière fictive spécialisée dans la location de mobilier avec intégration d'un espace d'administration.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/1mm7nvEIna1485qQBJH3BWeFyTX1crVwdNrIDr793R3Y/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-user">Doc Utilisateur</a>
-              <a href="https://salac.rf.gd" download class="btn-projet btn-dl-zip btn-full">Lien du site</a>
+              <a href="https://salac.rf.gd" target="_blank" class="btn-projet btn-dl-zip btn-full">Lien du site</a>
             </div>
           </div>
         </article>
 
         <article class="carte-projet">
-          <div class="carte-image">
-            <img src="photos/gsb.png" alt="Aperçu du projet">
+          <div class="carte-image" style="background-color: #FFFFFF;">
+            <img src="photos/gsb.png" alt="Logo GSB">
           </div>
           <div class="carte-contenu">
             <h3>GSB RH</h3>
-            <p>Création d'une application en Java exploitant rigoureusement les principes de la programmation orientée
-              objet (POO).</p>
+            <p>Développement d'une application de bureau en Java pour le service RH de GSB, dédiée à la gestion administrative des visiteurs médicaux.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/1JTZ2dbVwy1FtGZxk7GWi7Yxv6kAboq8-pbyGKmmdW2w/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-user">Doc Utilisateur</a>
               <a href="docs/documentation-technique-gsbrh-2.pdf" target="_blank" class="btn-projet btn-dl-tech">Doc Technique</a>
@@ -825,13 +823,12 @@
         </article>
 
         <article class="carte-projet">
-          <div class="carte-image">
-            <img src="photos/gsb.png" alt="Aperçu du projet">
+          <div class="carte-image" style="background-color: #FFFFFF;">
+            <img src="photos/gsb.png" alt="Logo GSB">
           </div>
           <div class="carte-contenu">
             <h3>GSB Frais</h3>
-            <p>Création d'une application en Java exploitant rigoureusement les principes de la programmation orientée
-              objet (POO).</p>
+            <p>Développement d'une application web en PHP permettant la saisie et la gestion des fiches de frais des visiteurs médicaux.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/1pARJIwlE8wA1WSOmD-t2_wLKIx8UlNKFagzqOKUUgJM/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-user">Doc Utilisateur</a>
               <a href="docs/documentation-technique-gsbfrais-2.pdf" target="_blank" class="btn-projet btn-dl-tech">Doc Technique</a>
@@ -843,12 +840,11 @@
 
         <article class="carte-projet">
           <div class="carte-image">
-            <img src="chemin_image_projet.jpg" alt="Aperçu du projet">
+            <img src="photos/E.svg" alt="Logo Portfolio">
           </div>
           <div class="carte-contenu">
             <h3>Portfolio</h3>
-            <p>Conception et intégration HTML/CSS responsive pour présenter mon parcours, mes compétences et mes
-              projets.</p>
+            <p>Développement d'un site HTML/CSS responsive pour présenter mon parcours, mes compétences et mes projets.</p>
             <div class="carte-actions">
               <a href="https://docs.google.com/document/d/1SGinur1fgsT99dymggtvqizoU2rocqanGz4juSCW7a0/edit?usp=sharing" target="_blank" class="btn-projet btn-dl-tech">Doc Technique</a>
             </div>
@@ -867,7 +863,7 @@
       <div class="row align-items-center mt-5">
         <div class="col-md-6 text-center mb-4 mb-md-0">
           <a href="CV_EvanC.pdf" target="_blank" style="text-decoration: none;">
-            <div class="cv-action-card bg-white">
+            <div class="cv-action-card">
               <i class="bi bi-file-earmark-person"></i>
               <h3>Consulter mon CV</h3>
               <p>Cliquez pour ouvrir le document PDF dans un nouvel onglet</p>
@@ -898,7 +894,7 @@
         <div class="col-md-6 mb-4">
           <div class="card shadow-sm h-100 bg-light">
             <div class="card-body p-4">
-              <h5 class="card-title text-center mb-4">Me contacter par mail</h5>
+              <h5 class="card-title text-center mb-4">Me contacter par mail (Gmail)</h5>
               <form id="gmailForm" onsubmit="return sendViaGmail();">
                 <div class="form-group">
                   <label for="objet" class="font-weight-bold">Objet</label>
@@ -912,7 +908,7 @@
                 </div>
                 <div class="d-flex justify-content-end mt-4">
                   <button type="submit" class="btn btn-info px-4 py-2"
-                    style="border-radius: 8px; font-weight: 600;">Envoyer <i class="bi bi-send ml-1"></i></button>
+                    style="border-radius: 8px; font-weight: 600;">Accéder au formulaire d'envoi <i class="bi bi-send ml-1"></i></button>
                 </div>
               </form>
             </div>
